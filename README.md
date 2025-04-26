@@ -4,7 +4,8 @@ This is for people who wants to compile packages on artix comfortably keeping th
 ## Goals
 - [x] Install bin packages and keep them update
 - [x] Install AUR packages and keep them update
-- [ ] Clone and build source packages and keep them update, with a customizepkg option
+- [x] Clone and build source packages with PKGBUILD edit
+- - [x] Update & Upgrade (log)
 - [ ] Have UseFlags
 
 ## How to
