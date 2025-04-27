@@ -7,10 +7,29 @@ Little script for compiling source packages and keep them update (Emerge like) o
 - - [x] Keep track of compiled packages & Update them.
 - [ ] Have UseFlags
 
-## Use & How it works.
-**Install `base-devel` and `git` packages.** I recommend moving the files to `.local/bin` or any PATH environment, and/or using them with an alias: 
-> I'm using `yay --build` for build and `update && yay -Syu` for update both compiled, binaries and AUR. You can choose different aliases.
+## Installation
+Make sure to install `base-devel` and `git` packages.
+```
+sudo pacman -S --needed git base-devel
+git clone https://github.com/notVoid3/emerge-artix.git
+cd emerge-artix && chmod +x build update
+```
+For better implementation I recommend moving the files to `.local/bin` or any PATH environment, and using them with an alias.
+```
+alias update="update && yay -Syu"
 
+yay() {
+  if [[ $1 == "--build" ]]; then
+    shift
+    build "$@"
+  else
+    command yay "$@"
+  fi
+}
+```
+> This is part of my `zshrc` file, I use an alias to update and integration with yay to the build script. you can edit your own.
+
+## Use & How it works.
 - Use `build {package}`. It will clone PKGBUILD to `$HOME/.cache/yay`, will ask for editing PKGBUILD and proceed to compile & install. The package's packager will be custom signed for updates.
   
 - Once instalattion is completed without errors, the package name will be write on a log file on HOME (.compiled_packages.log). This file is needed for updates.
