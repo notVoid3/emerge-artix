@@ -27,7 +27,7 @@ yay() {
   fi
 }
 ```
-> This is part of my `zshrc` file, I use an alias to update and integration with yay to the build script. you can edit your own.
+> This is part of my `zshrc` file, I use an alias to update and a function to integrate build to yay.
 
 ## Use & How it works.
 - Use `build {package}`. It will clone PKGBUILD to `$HOME/.cache/yay`, will ask for editing PKGBUILD and proceed to compile & install. The package's packager will be custom signed for updates.
