@@ -14,4 +14,4 @@ Little script for compiling source packages and keep them update (Emerge like) o
 - Once instalattion is completed without errors, the package name will be write on a log file on HOME (.compiled_packages.log). This file is needed for updates.
 - **When updating use `update` FIRST**. Otherwise pacman will update the package replacing them with binaries instead of rebuilding them.
   - This scripts checks if all packages in `.compiled_packages.log` are signed by custom Packager's in case you decided to uninstall or replace them with a binary and overwrites the LOG.
-  - Then it list upgradeable packages with `pacman -Syu` and rebuilds them using `build`.
+  - Then it lists upgradeable packages with `pacman -Syu` and rebuilds them using `build`.
